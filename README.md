@@ -1,97 +1,137 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🐱 Purrfect App 📱
 
-# Getting Started
+**React Native CLI · TypeScript**
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+Una aplicación móvil moderna desarrollada con **React Native CLI** y **TypeScript** que permite explorar información clara y confiable sobre diferentes razas de gatos.  
+La app cuenta con un manejo eficiente de datos usando **TanStack React Query**.
 
-## Step 1: Start Metro
+---
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## ✨ Características
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+🐾 Listado completo de razas de gatos  
+🔍 Búsqueda de razas por nombre  
+📄 Visualización de información detallada por raza  
+🚀 Consumo de datos optimizado con React Query  
+📱 Uso de componentes nativos para iOS y Android  
+🎨 Interfaz limpia y amigable para el usuario  
+🔑 Manejo seguro de la API Key mediante variables de entorno
 
-```sh
-# Using npm
-npm start
+---
 
-# OR using Yarn
-yarn start
+## 🛠️ Tecnologías utilizadas
+
+- **Frontend:** React Native (CLI)
+- **Lenguaje:** TypeScript/JavaScript
+- **Navegación:** React Navigation (Native Stack)
+- **Manejo de estado y datos:** TanStack React Query
+- **Cliente HTTP:** Axios
+- **Íconos:** react-native-vector-icons
+- **Variables de entorno:** react-native-dotenv
+- **Testing (opcional):** Jest + React Testing Library
+
+---
+
+## 🔗 API
+
+Esta aplicación consume datos desde **The Cat API**:
+
+- **Endpoint:** `https://api.thecatapi.com/v1/breeds`
+- **Documentación:** https://developers.thecatapi.com/
+
+La autenticación se maneja mediante una **API Key** enviada en los headers de la petición.
+
+---
+
+## ⚙️ Instalación
+
+### 1️⃣ Clonar el repositorio
+
+```bash
+git clone https://github.com/carolianabetancur/purrfect-app.git
+cd purrfect-app
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### 2️⃣ Instalar dependencias
 
-### Android
+```bash
+npm install
+```
+---
 
-```sh
-# Using npm
-npm run android
+### 3️⃣ Configurar variables de entorno
 
-# OR using Yarn
-yarn android
+Crear un archivo `.env` en la raíz del proyecto:
+
+```env
+CAT_API_KEY=live_XXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-### iOS
+Asegúrate de que `react-native-dotenv` esté correctamente configurado.
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+---
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+## ▶️ Ejecución de la app
 
-```sh
-bundle install
+### iOS (Simulador)
+
+```bash
+npx react-native run-ios
 ```
 
-Then, and every time you update your native dependencies, run:
+> Requiere macOS, Xcode y CocoaPods instalados.
 
-```sh
-bundle exec pod install
+---
+
+### Android (Emulador o dispositivo físico)
+
+```bash
+npx react-native run-android
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+> Asegúrate de tener un emulador activo o un dispositivo conectado.
 
-```sh
-# Using npm
-npm run ios
+---
 
-# OR using Yarn
-yarn ios
+## 🧪 Testing
+
+Para ejecutar las pruebas:
+
+```bash
+npm test
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## 📂 Estructura del proyecto
 
-## Step 3: Modify your app
+```txt
+src/
+├── api/          # Configuración de Axios y servicios API
+├── assets/       # Imágenes y recursos estáticos
+├── components/   # Componentes UI reutilizables
+├── navigation/   # Configuración de navegación
+├── screens/      # Pantallas (Home, Detail, etc.)
+├── hooks/        # Hooks personalizados (React Query)
+├── types/        # Tipos y modelos en TypeScript
+└── constants/    # Constantes y textos de la app
+```
 
-Now that you have successfully run the app, let's make changes!
+---
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## 🔄 Flujo de trabajo recomendado
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+1. Iniciar Metro Bundler:
+   ```bash
+   npx react-native start
+   ```
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+2. Ejecutar la app:
+   - `npx react-native run-ios`
+   - `npx react-native run-android`
 
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+3. Recargar la app:
+   - Presionar `r` en la terminal
+   - O usar el menú del simulador/dispositivo
